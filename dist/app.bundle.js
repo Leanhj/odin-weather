@@ -1,0 +1,2 @@
+(()=>{"use strict";fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${"london"}?unitGroup=us&key=FSR6ZDHUKEAXTV8RK7R7FYJPH&contentType=json`,{mode:"cors"}).then((e=>e.json()))})();
+//# sourceMappingURL=app.bundle.js.map
