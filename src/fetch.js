@@ -1,11 +1,12 @@
 const apiKey = "FSR6ZDHUKEAXTV8RK7R7FYJPH";
 
-export function fetchWeatherData(query) {
-	const weatherDataAsJson = fetch(
-		`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${query}?unitGroup=us&key=${apiKey}&contentType=json`,
+export async function fetchWeatherData(query) {
+	const response = await fetch(
+		`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${query}?unitGroup=metric&key=${apiKey}&contentType=json`,
 		{ mode: "cors" },
-	).then((response) => response.json());
-	return weatherDataAsJson;
+	);
+	const data = await response.json();
+	return data;
 }
 
 export default fetchWeatherData;
