@@ -31,7 +31,6 @@ export function createFutureForecastWith(aJsonResponse) {
     for (let i = 0; i < futureData.length; i += 1) {
         const singleFutureData = futureData[i];
         const singleFutureForecast = new FutureForecast(
-            singleFutureData.conditions,
             singleFutureData.icon,
             singleFutureData.precip,
             singleFutureData.precipprob,

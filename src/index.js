@@ -5,11 +5,17 @@ import {
 } from "./fetch";
 import { CurrentForecast } from "./currentForecast";
 import { FutureForecast } from "./futureForecast";
+import {
+    renderCurrentForecast,
+    renderFutureForecast,
+} from "./render";
 
 const response = await fetchWeatherData("london");
 
 const forecast = createForecastWith(response);
+renderCurrentForecast(forecast);
 const futureForecast = createFutureForecastWith(response);
+renderFutureForecast(futureForecast);
 const resolvedAddress = response.resolvedAddress;
 const divAddress = document.querySelector("#address");
 divAddress.textContent = resolvedAddress;
@@ -24,4 +30,6 @@ buttonSearchbar.addEventListener("click", async (e) => {
     const forecast = createForecastWith(response);
     const futureForecast = createFutureForecastWith(response);
     divAddress.textContent = response.resolvedAddress;
+    renderCurrentForecast(forecast);
+    renderFutureForecast(futureForecast);
 });
