@@ -1,5 +1,15 @@
 const divCurrentForecast = document.querySelector("#current-forecast");
 const divFutureForecast = document.querySelector("#future-forecast");
+divFutureForecast.classList = "future-forecast";
+
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
+
+const images = importAll(require.context('../icons', false, /\.(png|jpe?g|svg)$/));
+console.log(images);
 
 function createDiv() {
     return document.createElement("div");
@@ -7,9 +17,14 @@ function createDiv() {
 export function renderCurrentForecast(aCurrentForecast) {
     divCurrentForecast.replaceChildren();
     const divMainInfo = createDiv();
+    divMainInfo.classList = "main-info";
 
     const divIcon = createDiv();
-    divIcon.textContent = aCurrentForecast.icon;
+    divIcon.classList = "main-icon-div";
+    const icon = document.createElement("img");
+    icon.src = images[`${aCurrentForecast.icon}.svg`];
+    icon.classList = "main-icon";
+    divIcon.appendChild(icon);
 
     const divInfo = createDiv();
     const divTemperature = createDiv();
@@ -42,8 +57,13 @@ export function renderFutureForecast(aFutureForecast) {
     divFutureForecast.replaceChildren();
     for (let i = 0; i < aFutureForecast.length; i += 1) {
         const divSingleDay = createDiv();
+        divSingleDay.classList = "day-div";
         const divIcon = createDiv();
-        divIcon.textContent = aFutureForecast[i].icon;
+        divIcon.classList = "icon-div";
+        const icon = document.createElement("img");
+        icon.src = images[`${aFutureForecast[i].icon}.svg`];
+        icon.classList = "future-icons";
+        divIcon.appendChild(icon);
         const divTempMax = createDiv();
         divTempMax.textContent = aFutureForecast[i].tempMax;
         const divTempMin = createDiv();

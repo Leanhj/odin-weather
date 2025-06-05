@@ -7,10 +7,10 @@ export class FutureForecast {
         tempMin,
     ) {
         this.icon = icon;
-        this.precipitation = precipitation;
-        this.precipitationProbability = precipitationProbability;
-        this.tempMax = tempMax;
-        this.tempMin = tempMin;
+        this.precipitation = `${precipitation}mm`;
+        this.precipitationProbability = `${precipitationProbability}%`;
+        this.tempMax = `${tempMax}°C`;
+        this.tempMin = `${tempMin}°C`;
     }
 }
 

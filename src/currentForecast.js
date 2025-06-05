@@ -8,11 +8,11 @@ export class CurrentForecast {
         temperature,
     ) {
         this.condition = condition;
-        this.feelsLike = feelsLike;
+        this.feelsLike = `Feels like ${feelsLike}°C`;
         this.icon = icon;
-        this.precipitation = precipitation;
-        this.precipitationProbability = precipitationProbability;
-        this.temperature = temperature;
+        this.precipitation = `${precipitation}mm`;
+        this.precipitationProbability = `${precipitationProbability}%`;
+        this.temperature = `${temperature}°C`;
     }
 }
 
