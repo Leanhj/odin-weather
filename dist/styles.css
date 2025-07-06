@@ -1,0 +1,121 @@
+:root {
+    --text: #e4ebec;
+    --background: #081112;
+    --primary: #98dde4;
+    --secondary: #118691;
+    --accent: #0deafe;
+}
+
+* {
+    font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+    font-weight: normal;
+    color: var(--text);
+}
+
+header {
+    padding: 8px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    background-color: var(--background);
+    gap: 8px;
+}
+
+header input {
+    background-color: var(--secondary);
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    color: var(--background);
+}
+
+header input:focus {
+    background-color: var(--background);
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    outline: none;
+    color: var(--text);
+}
+
+header button {
+    background-color: var(--secondary);
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: var(--background);
+}
+
+body {
+    margin: 0;
+    padding: 0px;
+    background-color: var(--background);
+}
+
+#address {
+    font-size: 32px;
+    margin-top: 32px;
+    padding: 8px;
+}
+
+#current-forecast {
+    font-size: xx-large;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    height: 25%;
+    width: 50%;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.main-icon-div {
+    height: 80px;
+    width: 80px;
+}
+
+.main-icon {
+    height: 100%;
+    width: 100%;
+}
+
+.future-forecast {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 8px;
+}
+
+.day-div {
+    width: 6%;
+    height: 24%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.icon-div {
+    height: 48px;
+    width: 80%;
+}
+
+.future-icons {
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    filter: invert(72%) sepia(55%) saturate(3230%) hue-rotate(151deg) brightness(110%) contrast(105%);
+}
