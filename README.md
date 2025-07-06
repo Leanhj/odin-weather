@@ -3,4 +3,4 @@ Simple weather forecast webpage with location search.
 
 Built with HTML, CSS and JavaScript.
 
-Live preview: 
+Live preview: https://leanhj.github.io/odin-weather/
